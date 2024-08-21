@@ -8,12 +8,13 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  // Aquí puedes añadir tus rutas de API con Express
-  server.get('/api/hello', (req, res) => {
-    res.json({ message: 'Hola desde el backend' });
+  // Rutas API personalizadas con Express
+  server.post('/api/register', (req, res) => {
+    res.json({ message: 'Hello from API!' });
   });
 
-  server.all('*', (req, res) => {
+  // Todas las demás rutas serán manejadas por Next.js
+  server.all('*', (req, res) => { 
     return handle(req, res);
   });
 
