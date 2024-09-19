@@ -19,6 +19,7 @@ export default function IniciarSesion() {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({ email, password }),
       });
       
@@ -40,6 +41,8 @@ export default function IniciarSesion() {
       console.log('Parsed data:', data);
 
       if (response.ok) {
+        console.log("xd");
+        
         navigate('/dashboard/inicio'); 
       } else {
         setError(data.message || 'Error en el inicio de sesión');
