@@ -40,5 +40,5 @@ func isAuthenticated(w http.ResponseWriter, r *http.Request) bool {
 
 func CheckAuth(w http.ResponseWriter, r *http.Request) {
 	authenticated := isAuthenticated(w, r)
-	json.NewEncoder(w).Encode(map[string]bool{"athenticated": authenticated})
+	json.NewEncoder(w).Encode(map[string]bool{"authenticated": authenticated}) // Corrección aquí
 }

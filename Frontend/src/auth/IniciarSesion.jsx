@@ -42,7 +42,6 @@ export default function IniciarSesion() {
 
       if (response.ok) {
         console.log("xd");
-        
         navigate('/dashboard/inicio'); 
       } else {
         setError(data.message || 'Error en el inicio de sesión');

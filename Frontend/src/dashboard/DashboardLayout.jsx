@@ -9,7 +9,7 @@ function DashboardLayout() {
   return (
     <div className='min-h-dvh grid grid-rows-[auto,1fr,auto]'>
       <Encabezado/>
-      <main>
+      <main className='mt-11'>
         <Routes>
             {dashboardRoutes.map((route) => (
               <Route key={route.path} path={route.path} element={route.element}/>

@@ -12,6 +12,7 @@ const ProtectedRoute = ({ element }) => {
                     credentials: 'include', 
                 });
                 const data = await response.json();
+                console.log('Authentication response:', data);
                 setIsAuthenticated(data.authenticated);
                 
             } catch (error) {
@@ -19,7 +20,7 @@ const ProtectedRoute = ({ element }) => {
                 setIsAuthenticated(false);
             }
         };
-
+    
         checkAuth();
     }, []);
 
@@ -28,7 +29,7 @@ const ProtectedRoute = ({ element }) => {
     }
 
     if (!isAuthenticated) {
-        return <Navigate to="/auth/login" replace />;
+        return <Navigate to="/auth/iniciarSesion" replace />;
     }
 
     return element;
