@@ -64,7 +64,7 @@ func Login(db *sql.DB, w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Generar el token JWT
-	expirationTime := time.Now().Add(1 * time.Minute)
+	expirationTime := time.Now().Add(30 * time.Minute)
 	claims := &models.Claims{
 		Email: user.Email,
 		StandardClaims: jwt.StandardClaims{
